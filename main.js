@@ -52,14 +52,14 @@ scene.background = spaceTexture
 
 //Avatar
 
-const aegiTexture = new THREE.TextureLoader().load('Aegi.jpeg')
+const chohyeTexture = new THREE.TextureLoader().load('chohye.jpeg')
 
-const aegi = new THREE.Mesh(
+const chohye = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
-  new THREE.MeshBasicMaterial({ map: aegiTexture })
+  new THREE.MeshBasicMaterial({ map: chohyeTexture })
 )
 
-scene.add(aegi)
+scene.add(chohye)
 
 
 //sphere
@@ -77,8 +77,8 @@ scene.add(sphere)
 sphere.position.z = 30
 sphere.position.setX(-20)
 
-aegi.position.z = 1
-aegi.position.x = 2
+chohye.position.z = 5
+chohye.position.x = 2
 
 //Scroll Animation
 function moveCamera() {
@@ -88,11 +88,13 @@ function moveCamera() {
   sphere.rotation.y += 0.075
   sphere.rotation.z += 0.05
 
-  aegi.rotation.y += 0.01
-  aegi.rotation.z += 0.01
+  chohye.rotation.x += 0.01
+  chohye.rotation.y += 0.041
+  chohye.rotation.z += 0.01
 
-  camera.position.z = t * -0.01;
-  camera.position.x = t * -1;
+  camera.position.z = t * -1;
+  camera.position.x = t * -0.24;
+  camera.position.y = t * -0.54;
   camera.rotation.y = t * -0.0002;
 
 }
@@ -105,8 +107,12 @@ function animate() {
   requestAnimationFrame(animate)
 
   torus.rotation.x += 0.01;
-  torus.rotation.y += 0.005
-  torus.rotation.z += 0.01
+  torus.rotation.y += 0.008
+  torus.rotation.z += 0.033
+
+  chohye.rotation.z += -0.003
+  chohye.rotation.y += -0.001
+  chohye.rotation.z += 0.003
 
   controls.update()
 

@@ -36,7 +36,7 @@ function addStar() {
   const geometry = new THREE.SphereGeometry(0.25, 24, 24);
   const material = new THREE.MeshStandardMaterial({ color: 0xffffff })
   const star = new THREE.Mesh(geometry, material)
-
+  //randomize stars
   const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100))
 
   star.position.set(x, y, z)
@@ -74,10 +74,10 @@ const sphere = new THREE.Mesh(
 )
 scene.add(sphere)
 
-sphere.position.z = 30
-sphere.position.setX(-20)
+sphere.position.z = 19
+sphere.position.setX(-10)
 
-chohye.position.z = 5
+chohye.position.z = 2
 chohye.position.x = 2
 
 //Scroll Animation
@@ -92,10 +92,10 @@ function moveCamera() {
   chohye.rotation.y += 0.041
   chohye.rotation.z += 0.01
 
-  camera.position.z = t * -1;
-  camera.position.x = t * -0.24;
-  camera.position.y = t * -0.54;
-  camera.rotation.y = t * -0.0002;
+  camera.position.z = t * -0.01;
+  camera.position.x = t * -0.024;
+  camera.position.y = t * -0.04;
+  camera.rotation.y = t * -0.00002;
 
 }
 document.body.onscroll = moveCamera
@@ -107,12 +107,14 @@ function animate() {
   requestAnimationFrame(animate)
 
   torus.rotation.x += 0.01;
-  torus.rotation.y += 0.008
-  torus.rotation.z += 0.033
+  torus.rotation.y += 0.008;
+  torus.rotation.z += 0.033;
 
   chohye.rotation.z += -0.003
   chohye.rotation.y += -0.001
   chohye.rotation.z += 0.003
+
+  sphere.rotation.z += 0.003
 
   controls.update()
 

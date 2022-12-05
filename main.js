@@ -27,7 +27,8 @@ scene.add(pointLight, ambientLight)
 
 //Helpers
 const lightHelper = new THREE.PointLightHelper(pointLight)
-const gridHelper = new THREE.GridHelper(200, 50)
+//GridHelper( size : number, divisions : Number, colorCenterLine : Color, colorGrid : Color )
+const gridHelper = new THREE.GridHelper(0, 50, 0xFFFFFF)
 scene.add(lightHelper, gridHelper)
 
 const controls = new OrbitControls(camera, renderer.domElement)

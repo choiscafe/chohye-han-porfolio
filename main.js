@@ -47,13 +47,13 @@ function addStar() {
 Array(200).fill().forEach(addStar)
 
 //Background
-const spaceTexture = new THREE.TextureLoader().load('sky.jpeg')
+const spaceTexture = new THREE.TextureLoader().load('./img/sky.jpeg')
 scene.background = spaceTexture
 
 
 //Avatar
 
-const chohyeTexture = new THREE.TextureLoader().load('chohye.jpeg')
+const chohyeTexture = new THREE.TextureLoader().load('./img/chohye.jpeg')
 
 const chohye = new THREE.Mesh(
   new THREE.BoxGeometry(3, 3, 3),
@@ -65,7 +65,7 @@ scene.add(chohye)
 
 //sphere
 
-const sphereTexture = new THREE.TextureLoader().load('stars.jpeg')
+const sphereTexture = new THREE.TextureLoader().load('./img/stars.jpeg')
 const sphere = new THREE.Mesh(
   new THREE.SphereGeometry(3, 32, 32),
   new THREE.MeshStandardMaterial({
@@ -123,3 +123,14 @@ function animate() {
 }
 animate()
 
+if (WebGL.isWebGLAvailable()) {
+
+  // Initiate function or other initializations here
+  animate();
+
+} else {
+
+  const warning = WebGL.getWebGLErrorMessage();
+  document.getElementById('container').appendChild(warning);
+
+}

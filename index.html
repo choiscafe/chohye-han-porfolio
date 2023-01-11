@@ -5,10 +5,14 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
+  <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
   <title>Vite App</title>
 </head>
 
 <body>
+
+
   <canvas id="bg"></canvas>
 
   <main>
@@ -23,8 +27,8 @@
       <p>I like making stuff and putting it on the internet</p>
     </blockquote>
 
-    <section>
-      <h2>📜 Manifesto</h2>
+    <section data-scroll>
+      <h2 class="title">About Me</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
         magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -51,8 +55,8 @@
 
     </section>
 
-    <section class="light">
-      <h2>👩🏽‍🚀 Projects</h2>
+    <section class="light" data-scroll>
+      <h2 class="title">👩🏽‍🚀 Projects</h2>
 
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -78,8 +82,8 @@
       <p>The best way out is always through <br>-Robert Frost</p>
     </blockquote>
 
-    <section class="left">
-      <h2>🌮 Work History</h2>
+    <section class="left" data-scroll>
+      <h2 class="title">🌮 Work History</h2>
 
       <h3>Q4 Designs</h3>
       <p>
@@ -114,7 +118,20 @@
 
 
   </main>
+  <script>ScrollOut({
+      onShown: (element) => {
+        new TypeIt(element.querySelector('.title'), {
+          speed: 75,
+          startDelay: 10,
+          cursor: false,
+        })
+          .pause(8000)
+          .go();
+      },
+    });
+  </script>
   <script type="module" src="/main.js"></script>
+
 </body>
 
 </html>

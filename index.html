@@ -3,11 +3,17 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="img/C.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js"></script>
   <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
-  <title>Vite App</title>
+  <title>Hello Chohye!</title>
+  <style>
+    #myPDF {
+      width: 85%;
+      height: 975px;
+    }
+  </style>
 </head>
 
 <body>
@@ -91,18 +97,20 @@
     <section class="left" data-scroll>
       <h2 class="title">🤝 Contact</h2>
 
-      <h3>Resume
+      <a id="myPDF" href="img/resume.pdf" target="_blank"><img src="img/resume.png" width="8.5%"
+          alt="Resume PDF"></img></a>
 
-      </h3>
-      <h3>Email</h3>
-      <h3>LinkedIn
-        <a href="https://www.linkedin.com/in/chohye-han/"></a>
-      </h3>
-      <h3>Github </h3>
+      <a href="mailto:choiscafe@gmail.com?subject=Hello Chohye!"><img src="img/gmail.png" width="7.5%"></img></a>
+
+      <a href="https://www.linkedin.com/in/chohye-han/" target="_blank"><img src="img/linkedin.png"
+          width="8.5%"></img></a>
+
+      <a href="https://github.com/choiscafe" target="_blank"><img src="img/github-mark.png" width="8.5%"></img></a>
 
     </section>
   </main>
-  <script>ScrollOut({
+  <script>
+    ScrollOut({
       onShown: (element) => {
         new TypeIt(element.querySelector('.title'), {
           speed: 75,
@@ -113,6 +121,10 @@
           .go();
       },
     });
+
+    // function showResume() {
+    //   document.querySelector("resume")
+    // }
   </script>
   <script type="module" src="/main.js"></script>
 
